@@ -5,15 +5,23 @@ export const useTodoStore = defineStore('todos', {
   state: () => {
     return {
       todos: [],
-      singleTodo: {}
+      singleTodo: {},
+      filterQueries: { status: '', page: 1 },
+      pageInformation: {
+        currentPage: 1,
+        lastPage: 1
+      }
     }
   },
   actions: {
     async getAll() {
-      const response = await api.get('todos')
-      const data = await response.data.todos
-      this.todos = data
-      return data
+      const queryString = new URLSearchParams(this.filterQueries).toString()
+      const response = await api.get(`todos/?${queryString}`)
+      const responseTodos = await response.data.todos
+      this.todos = responseTodos.data
+      this.pageInformation.currentPage = responseTodos.current_page
+      this.pageInformation.lastPage = responseTodos.last_page
+      return responseTodos
     },
     async add(todo) {
       const response = await api.post('todos', todo)

@@ -1,6 +1,6 @@
 <template>
-  <q-item>
-    <q-form>
+  <q-item class="q-px-none">
+    <q-form class="full-width">
       <q-input
         outlined
         label="Todo Title"
@@ -38,7 +38,6 @@
 import { ref, computed, watch, defineProps } from 'vue'
 import { useQuasar } from 'quasar'
 import { useTodoStore } from '../stores/todo-store'
-import AjaxbarPage from 'src/pages/AjaxbarPage.vue'
 
 const $q = useQuasar()
 const props = defineProps(['ajaxbar'])

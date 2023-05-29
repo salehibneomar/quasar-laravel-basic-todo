@@ -13,9 +13,14 @@ class TodoController extends Controller
      */
     public function index(Request $request)
     {
-        $todos = Todo::orderBy('id','desc')->get();
+        $todos = Todo::query();
+        if($request->has('status') && $request->status!=''){
+            $todos = $todos->where('is_completed', $request->status);
+        }
+        $todos = $todos->orderBy('id','desc')->paginate(5);
         return response()->json(['todos'=>$todos], 200);
     }
+
 
     /**
      * Store a newly created resource in storage.

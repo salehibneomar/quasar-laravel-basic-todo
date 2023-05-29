@@ -11,7 +11,6 @@
       v-model:selected.sync="chip.selected"
       v-model="chip.available"
       @remove="chip.available = false"
-      flat
     >
       {{ chip.title }}
     </q-chip>

@@ -1,16 +1,23 @@
 <template>
   <div class="q-pa-md">
     <q-btn color="purple" @click="showNotif" label="Show Notification" />
+    &ensp;
+    <test-component @testemit="emitTrigger" />
   </div>
 </template>
 
 <script>
 import { useQuasar } from 'quasar'
+import TestComponent from 'src/components/TestComponent.vue'
 
 export default {
   setup() {
     const $q = useQuasar()
-
+    const emitTrigger = (val) => {
+      $q.notify({
+        message: val
+      })
+    }
     return {
       showNotif() {
         $q.notify({
@@ -28,8 +35,10 @@ export default {
             }
           ]
         })
-      }
+      },
+      emitTrigger
     }
-  }
+  },
+  components: { TestComponent }
 }
 </script>
