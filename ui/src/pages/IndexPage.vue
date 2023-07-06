@@ -107,6 +107,12 @@
           <q-icon name="language" />
         </q-item-section>
       </q-item>
+      <q-item clickable to="/image-upload">
+        <q-item-section>Image/File Upload</q-item-section>
+        <q-item-section avatar>
+          <q-icon name="upload_file" />
+        </q-item-section>
+      </q-item>
       <q-item clickable to="/test">
         <q-item-section>Test</q-item-section>
         <q-item-section avatar>

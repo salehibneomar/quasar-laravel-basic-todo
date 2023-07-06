@@ -19,7 +19,8 @@ const routes = [
       { path: 'list', component: () => import('pages/ListPage.vue') },
       { path: 'form-components', component: () => import('pages/FormComponentsPage.vue') },
       { path: 'test', component: () => import('pages/TestPage.vue') },
-      { path: 'translation', component: () => import('pages/TranslationPage.vue') }
+      { path: 'translation', component: () => import('pages/TranslationPage.vue') },
+      { path: 'image-upload', component: () => import('pages/ImageUploadPage.vue') }
     ]
   },
   {
