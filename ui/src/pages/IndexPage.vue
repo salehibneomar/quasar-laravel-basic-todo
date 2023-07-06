@@ -101,6 +101,12 @@
           <q-icon name="description" />
         </q-item-section>
       </q-item>
+      <q-item clickable to="/translation">
+        <q-item-section>Translation</q-item-section>
+        <q-item-section avatar>
+          <q-icon name="language" />
+        </q-item-section>
+      </q-item>
       <q-item clickable to="/test">
         <q-item-section>Test</q-item-section>
         <q-item-section avatar>

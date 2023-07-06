@@ -18,7 +18,8 @@ const routes = [
       { path: 'fab', component: () => import('pages/FloatingActionButtonPage.vue') },
       { path: 'list', component: () => import('pages/ListPage.vue') },
       { path: 'form-components', component: () => import('pages/FormComponentsPage.vue') },
-      { path: 'test', component: () => import('pages/TestPage.vue') }
+      { path: 'test', component: () => import('pages/TestPage.vue') },
+      { path: 'translation', component: () => import('pages/TranslationPage.vue') }
     ]
   },
   {
